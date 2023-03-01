@@ -1,0 +1,51 @@
+import React, { useState } from "react";
+import "./styles.css";
+
+const ToDoList = () => {
+    const [inputList, setInputList] = useState("");
+    const [items, setItems] = useState([]);
+    const change1 = (e) => {
+        setInputList(e.target.value);
+    };
+    const change2 = () => {
+        setItems((oldItems) => {
+            return [...oldItems, inputList];
+        });
+        setInputList("");
+    };
+    const deleteItem = (ind) => {
+        return setItems(
+            items.filter((item, i) => {
+                return i !== ind;
+            })
+        );
+    };
+    return (
+        <div className="App">
+            <div className="inner_div">
+                <h1 style={{ borderBottom: "2px solid black" }}>ToDo List</h1>
+                <input type="text" onChange={change1} value={inputList} />
+                &nbsp;&nbsp;
+                <button onClick={change2}>+</button>
+                <ol style={{ listStyle: "none" }}>
+                    {items.map((itemval, ind) => {
+                        return (
+                            <div style={{ display: "flex" }}>
+                                <button onClick={() => deleteItem(ind)}>-</button>&nbsp;
+                                <li id={ind} key={item.id}>{itemval}<span style={{ textDecoration: item.isChecked ? "line-through" : "none" }} >
+                                    {items.text}
+                                </span>
+                                    <input
+                                        type="checkbox"
+                                        checked={items.isChecked}>
+                                    </input>
+                                </li>
+                            </div>
+                        );
+                    })}
+                </ol>
+            </div>
+        </div>
+    )};
+
+    export default ToDoList
