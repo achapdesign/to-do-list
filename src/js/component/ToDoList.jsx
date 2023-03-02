@@ -23,21 +23,21 @@ const ToDoList = () => {
   };
   return (
     <div className="App">
-      <div className="container" style={{textAlign: "center"}}>
+      <div className="container" style={{textAlign: "center", backgroundColor:"salmon"}}>
         <div className="inner_div" >
           <input type="text" onChange={change1} value={inputList} />
           <button onClick={change2} style={{ backgroundColor: "lightblue", fontStretch: "1rem", borderRadius:"10px" }}>Add it to the List</button>
           <ol style={{ listStyle: "none", backgroundImage: `url(${gram})`, backgroundSize: 'cover', width: '100%', position: "center" }}>
             {items.map((itemval, ind) => {
               return (
-                <div style={{ display: "flex", }}>
+                <div style={{ display: "flex", backgroundColor:"lightblue", opacity:".5" }}>
                   <button onClick={() => deleteItem(ind)} style={{margin:"1rem", backgroundColor:"lightblue", borderRadius:"10px" }}>X</button>
-                  <li id={ind} key={items.id}>
+                  <li id={ind} key={items.id} style={{fontWeight:"bold", color:"black", fontSize:"30px"}}>
                     {itemval}
                     <span
                       style={{
                         textDecoration: items.isChecked
-                          ? "line-through"
+                          ? "underline overline dotted red;"
                           : "none",
                       }}
                     >

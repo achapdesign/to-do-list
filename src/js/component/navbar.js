@@ -4,9 +4,9 @@ import landscape from"/workspace/to-do-list/src/img/landscape.jpg"
 
 function Navbar() {
   return (
-    <div style={{ display: "flex", backgroundImage: `url(${landscape})` }}>
-        <h1 className="title" style={{ position:"start", padding: "1rem", color:"lightblue" }}>
-        ToDo List
+    <div style={{ display: "flex", backgroundImage: `url(${landscape})`, position:"relative" }}>
+        <h1 className="title" style={{ position:"start", padding: "1rem", color:"blue" }}>
+        To Do List
         </h1>
     </div>
   )
