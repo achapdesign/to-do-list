@@ -23,11 +23,11 @@ const ToDoList = () => {
   };
   return (
     <div className="App">
-      <div className="container" style={{textAlign: "center", backgroundColor:"salmon"}}>
+      <div className="container" style={{textAlign: "center", backgroundColor:"salmon", backgroundImage: `url(${gram})`, backgroundSize: 'cover', width: '100%', position: "center"}}>
         <div className="inner_div" >
           <input type="text" onChange={change1} value={inputList} />
           <button onClick={change2} style={{ backgroundColor: "lightblue", fontStretch: "1rem", borderRadius:"10px" }}>Add it to the List</button>
-          <ol style={{ listStyle: "none", backgroundImage: `url(${gram})`, backgroundSize: 'cover', width: '100%', position: "center" }}>
+          <ol style={{ listStyle: "none" }}>
             {items.map((itemval, ind) => {
               return (
                 <div style={{ display: "flex", backgroundColor:"lightblue", opacity:".5" }}>
